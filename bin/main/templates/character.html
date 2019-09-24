@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>RPG</title>
+</head>
+<body>
+ <form method="POST" action="command" th:object="${RpgUserForm}">
+  <h3>キャラ作成</h3>
+  <label>職業:</label>
+  <label th:each="profession : ${jobMap}">
+<!-- th:valueは実際に送る値。th:textはラジオボタンとして表示させる文字列。  -->
+   <input type="radio" name="job" th:value="${profession.key}"
+    th:text="${profession.value}" th:object="${RpgUserForm}"></label><br>
+
+  <label>名前:</label>
+  <label><input type="text" name="userName"></label><br>
+   <p><input type="submit" value="次へ"></p>
+ </form>
+</body>
+</html>

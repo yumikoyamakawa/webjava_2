@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>RPG COMMAND</title>
+</head>
+<body>
+ <form action="/" th:object="${RpgUserForm}">
+  <label>職業:</label>
+  <label th:value="${selectedJob}"></label>
+  <label>名前:</label>
+  <label th:value="${userName}"></label>
+</form>
+
+</body>
+</html>
